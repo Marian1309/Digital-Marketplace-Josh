@@ -9,6 +9,8 @@ import TrpcProvider from '@/services/providers/trpc';
 
 import { dynaPuff } from '@/lib/fonts';
 
+import Navbar from '@/components/navbar/navbar';
+
 import './globals.scss';
 
 export const metadata: Metadata = {
@@ -47,6 +49,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
           <TrpcProvider>
             <ContextProvider>
               <main className="relative flex min-h-screen flex-col">
+                <Navbar />
                 <div className="flex-1 flex-grow">{children}</div>
               </main>
             </ContextProvider>

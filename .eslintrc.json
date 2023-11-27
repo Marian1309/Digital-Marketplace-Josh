@@ -91,7 +91,8 @@
     "react/jsx-one-expression-per-line": "off",
     "no-prototype-builtins": "off",
     "no-nested-ternary": "off",
-    "no-unused-expressions": "off"
+    "no-unused-expressions": "off",
+    "react/jsx-pascal-case": "off"
   },
   "globals": {
     "process": true,
