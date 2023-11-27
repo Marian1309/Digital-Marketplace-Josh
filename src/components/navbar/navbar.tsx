@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import MaxWidthWrapper from '@/components/common/max-width-wrapper';
 
+import { Cart } from '../cart';
 import Icons from '../icons';
 import { buttonVariants } from '../ui/button';
 
@@ -62,15 +63,12 @@ const Navbar: FC = () => {
 
                   {user ? null : (
                     <div className="flex lg:ml-6">
-                      <span
-                        aria-hidden="true"
-                        className="h-6 w-px bg-gray-200"
-                      />
+                      <span aria-hidden className="h-6 w-px bg-gray-200" />
                     </div>
                   )}
 
                   <div className="ml-4 flow-root lg:ml-6">
-                    {/* TODO: Cart */}
+                    <Cart />
                   </div>
                 </div>
               </div>

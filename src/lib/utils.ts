@@ -39,6 +39,6 @@ export const handleWidth = (): number => {
   );
 };
 
-export const getURLOrigin = () => {
+export const getURLOrigin = (): string => {
   return typeof window !== 'undefined' ? window.location.origin : '';
 };
