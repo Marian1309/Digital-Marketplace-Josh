@@ -14,7 +14,7 @@ You will need [Node.js](https://nodejs.org) version 16.x.x or greater installed 
 - **ORM:** [Prisma ORM](https://www.prisma.io)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com)
 - **UI Components:** [Shadcn UI](https://ui.shadcn.com)
-- **State Management:** [Zustand](https://zustand-demo.pmnd.rs), [React-query](https://tanstack.com/query)
+- **State Management:** [Redux-Toolkit](https://redux-toolkit.js.org), [Zustand](https://zustand-demo.pmnd.rs), [React-query](https://tanstack.com/query)
 - **Authentification:** [Clerk](https://clerk.com)
 - **Work with API:** [TRPC](https://trpc.io), [Axios](https://axios-http.com)
 - **Testing:** Unit - [Jest](https://jestjs.io), Integration - [React-testing-library](https://testing-library.com), E2E - [Playwright](https://playwright.dev)

@@ -45,7 +45,11 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
           themes={['light', 'dark']}
         >
           <TrpcProvider>
-            <ContextProvider>{children}</ContextProvider>
+            <ContextProvider>
+              <main className="relative flex min-h-screen flex-col">
+                <div className="flex-1 flex-grow">{children}</div>
+              </main>
+            </ContextProvider>
           </TrpcProvider>
         </ThemeProvider>
       </body>
