@@ -24,8 +24,6 @@ jobs:
         run: npm i -g pnpm
       - name: Install Dependencies
         run: pnpm install
-      - name: Build project
-        run: pnpm build
       - name: Unit and Integration Testing
         run: pnpm test
       - name: E2E Testing Setup
