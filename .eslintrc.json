@@ -92,7 +92,8 @@
     "no-prototype-builtins": "off",
     "no-nested-ternary": "off",
     "no-unused-expressions": "off",
-    "react/jsx-pascal-case": "off"
+    "react/jsx-pascal-case": "off",
+    "no-multi-assign": "off"
   },
   "globals": {
     "process": true,

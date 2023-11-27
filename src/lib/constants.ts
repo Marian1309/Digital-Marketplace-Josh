@@ -79,5 +79,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
   }
 ];
 
+export const PORT = Number(process.env.PORT) || 3000;
+
 Object.freeze(PERKS);
 Object.freeze(PRODUCT_CATEGORIES);
