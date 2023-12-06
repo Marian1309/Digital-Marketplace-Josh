@@ -1,11 +1,21 @@
+import * as trpcExpress from '@trpc/server/adapters/express';
 import express from 'express';
 
 import { PORT } from '../lib/constants';
+import { appRouter } from '../services/trpc/router';
 
 import { getPayloadClient } from './get-payload';
 import { nextApp, nextHandler } from './next-utils';
 
 const app = express();
+
+const createContext = ({
+  req,
+  res
+}: trpcExpress.CreateExpressContextOptions) => ({
+  req,
+  res
+});
 
 const start = async () => {
   const payload = await getPayloadClient({
@@ -16,6 +26,14 @@ const start = async () => {
       }
     }
   });
+
+  app.use(
+    '/api/trpc',
+    trpcExpress.createExpressMiddleware({
+      router: appRouter,
+      createContext
+    })
+  );
 
   app.use((req, res) => nextHandler(req, res));
 

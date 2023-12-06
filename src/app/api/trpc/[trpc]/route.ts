@@ -2,10 +2,10 @@ import type { NextRequest } from 'next/server';
 
 import { fetchRequestHandler } from '@trpc/server/adapters/fetch';
 
-import { appRouter } from '../trpc-router';
+import { appRouter } from '@/services/trpc/router';
 
 const handler = (req: NextRequest) => {
-  return fetchRequestHandler({
+  fetchRequestHandler({
     endpoint: '/api/trpc',
     req,
     router: appRouter,

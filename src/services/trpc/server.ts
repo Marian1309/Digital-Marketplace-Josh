@@ -1,6 +1,6 @@
 import { httpBatchLink } from '@trpc/client';
 
-import { appRouter } from '@/api/trpc/trpc-router';
+import { appRouter } from '@/services/trpc/router';
 
 import { getURLOrigin } from '@/lib/utils';
 

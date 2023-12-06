@@ -1,10 +1,7 @@
 import { initTRPC } from '@trpc/server';
 import axios from 'axios';
-import superjson from 'superjson';
 
-const t = initTRPC.create({
-  transformer: superjson
-});
+const t = initTRPC.create({});
 
 const { router, procedure } = t;
 
