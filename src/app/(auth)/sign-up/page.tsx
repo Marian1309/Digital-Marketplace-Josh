@@ -7,6 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { ArrowRight } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 
+import trpc from '@/services/trpc/client';
 import { authCredentialsSchema } from '@/services/validations';
 import type { AuthCredentialsSchema } from '@/services/validations/types';
 
@@ -25,8 +26,11 @@ const SignUpPage: NextPage = () => {
   } = useForm<AuthCredentialsSchema>({
     resolver: zodResolver(authCredentialsSchema)
   });
+  const { mutate, isLoading } = trpc.auth.createPayloadUser.useMutation({});
 
-  const onSubmit = ({ email, password }: AuthCredentialsSchema) => {};
+  const onSubmit = ({ email, password }: AuthCredentialsSchema) => {
+    mutate({ email, password });
+  };
 
   return (
     <div className="container relative flex flex-col items-center justify-center pt-20 lg:px-0">
@@ -69,6 +73,7 @@ const SignUpPage: NextPage = () => {
                     'focus-visible:ring-red-500': errors.password
                   })}
                   placeholder="Password"
+                  type="password"
                   {...register('password')}
                 />
               </div>

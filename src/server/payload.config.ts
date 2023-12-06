@@ -4,13 +4,16 @@ import { slateEditor } from '@payloadcms/richtext-slate';
 import path from 'path';
 import { buildConfig } from 'payload/config';
 
+import { users } from '../collections/users';
+
 export default buildConfig({
   serverURL: process.env.NEXT_PUBLIC_SERVER_URL || '',
-  collections: [],
+  collections: [users],
   routes: {
     admin: '/sell'
   },
   admin: {
+    user: 'users',
     bundler: webpackBundler(),
     meta: {
       titleSuffix: '- DigitalHippo',
