@@ -26,7 +26,7 @@ const SignUpPage: NextPage = () => {
   } = useForm<AuthCredentialsSchema>({
     resolver: zodResolver(authCredentialsSchema)
   });
-  const { mutate, isLoading } = trpc.auth.createPayloadUser.useMutation({});
+  const { mutate } = trpc.auth.createPayloadUser.useMutation();
 
   const onSubmit = ({ email, password }: AuthCredentialsSchema) => {
     mutate({ email, password });

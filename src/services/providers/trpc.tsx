@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { httpBatchLink } from '@trpc/client';
-import superjson from 'superjson';
 
 import { getURLOrigin } from '@/lib/utils';
 
@@ -29,8 +28,7 @@ const TrpcProvider: FC<PropsWithChildren> = ({ children }) => {
         httpBatchLink({
           url
         })
-      ],
-      transformer: superjson
+      ]
     })
   );
 

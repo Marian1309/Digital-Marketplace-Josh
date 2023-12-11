@@ -1,9 +1,7 @@
 import { TRPCError } from '@trpc/server';
 
-import { getPayloadClient } from '@/server/get-payload';
-
-import { authCredentialsSchema } from '@/services/validations';
-
+import { getPayloadClient } from '../../../server/get-payload';
+import { authCredentialsSchema } from '../../validations';
 import { publicProcedure, router } from '../trpc';
 
 export const authRouter = router({
@@ -11,6 +9,7 @@ export const authRouter = router({
     .input(authCredentialsSchema)
     .mutation(async ({ input }) => {
       const { email, password } = input;
+
       const payload = await getPayloadClient();
 
       const { docs: users } = await payload.find({
